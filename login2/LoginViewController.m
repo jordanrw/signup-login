@@ -6,16 +6,16 @@
 //  Copyright (c) 2014 Gannett Digital. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "LoginViewController.h"
 
-@interface ViewController ()
+@interface LoginViewController ()
             
 //@property (weak, nonatomic) IBOutlet UIView *view;
 //@property (weak, nonatomic) IBOutlet UILabel *welcomeLabel;
 
 @end
 
-@implementation ViewController
+@implementation LoginViewController
             
 - (void)viewDidLoad {
     [super viewDidLoad];

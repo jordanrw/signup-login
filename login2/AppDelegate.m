@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ViewController.h"
+#import "LoginViewController.h"
 #import <Parse/Parse.h>
 
 
@@ -31,7 +31,7 @@
     [defaultACL setPublicReadAccess:YES];
     [PFACL setDefaultACL:defaultACL withAccessForCurrentUser:YES];
     
-    ViewController *loginVC = [[ViewController alloc]init];
+    LoginViewController *loginVC = [[LoginViewController alloc]init];
     self.window.rootViewController = loginVC;
     [self.window makeKeyAndVisible];
     

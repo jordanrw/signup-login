@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		AD2C9F02195B496A0012C9B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2C9F01195B496A0012C9B7 /* main.m */; };
 		AD2C9F05195B496B0012C9B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2C9F04195B496B0012C9B7 /* AppDelegate.m */; };
-		AD2C9F08195B496B0012C9B7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2C9F07195B496B0012C9B7 /* ViewController.m */; };
+		AD2C9F08195B496B0012C9B7 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2C9F07195B496B0012C9B7 /* LoginViewController.m */; };
 		AD2C9F0D195B496B0012C9B7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD2C9F0C195B496B0012C9B7 /* Images.xcassets */; };
 		AD2C9F19195B496B0012C9B7 /* login2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = AD2C9F18195B496B0012C9B7 /* login2Tests.m */; };
 		AD2C9F23195B498E0012C9B7 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD2C9F22195B498E0012C9B7 /* Parse.framework */; };
@@ -48,8 +48,8 @@
 		AD2C9F01195B496A0012C9B7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AD2C9F03195B496A0012C9B7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		AD2C9F04195B496B0012C9B7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		AD2C9F06195B496B0012C9B7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		AD2C9F07195B496B0012C9B7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		AD2C9F06195B496B0012C9B7 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		AD2C9F07195B496B0012C9B7 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		AD2C9F0C195B496B0012C9B7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		AD2C9F12195B496B0012C9B7 /* login2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = login2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD2C9F17195B496B0012C9B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -134,8 +134,8 @@
 			children = (
 				AD2C9F03195B496A0012C9B7 /* AppDelegate.h */,
 				AD2C9F04195B496B0012C9B7 /* AppDelegate.m */,
-				AD2C9F06195B496B0012C9B7 /* ViewController.h */,
-				AD2C9F07195B496B0012C9B7 /* ViewController.m */,
+				AD2C9F06195B496B0012C9B7 /* LoginViewController.h */,
+				AD2C9F07195B496B0012C9B7 /* LoginViewController.m */,
 				AD2C9F0C195B496B0012C9B7 /* Images.xcassets */,
 				AD2C9EFF195B496A0012C9B7 /* Supporting Files */,
 			);
@@ -291,7 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD2C9F08195B496B0012C9B7 /* ViewController.m in Sources */,
+				AD2C9F08195B496B0012C9B7 /* LoginViewController.m in Sources */,
 				AD2C9F05195B496B0012C9B7 /* AppDelegate.m in Sources */,
 				AD2C9F02195B496A0012C9B7 /* main.m in Sources */,
 			);
