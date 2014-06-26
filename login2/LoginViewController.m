@@ -9,45 +9,89 @@
 #import "LoginViewController.h"
 
 @interface LoginViewController ()
-            
-//@property (weak, nonatomic) IBOutlet UIView *view;
-//@property (weak, nonatomic) IBOutlet UILabel *welcomeLabel;
+
 
 @end
 
+
 @implementation LoginViewController
+
+- (instancetype)initWithStyle
+{
+    self = [super init];
+    if (self) {
+        self.fields = PFLogInFieldsUsernameAndPassword | PFLogInFieldsPasswordForgotten | PFLogInFieldsLogInButton | PFLogInFieldsSignUpButton; // | PFLogInFieldsFacebook;
+    
+    }
+    return self;
+}
             
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    if (![PFUser currentUser]) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Logged in!" message:@"Logged in!" delegate:nil cancelButtonTitle:@"Log me out" otherButtonTitles:nil, nil];
+        [alert show];
+        [PFUser logOut];
+        //do something with logging in or logging out
+    }
+    
+    //Appearance
+    //self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@""]];
+    self.logInView.logo = nil;
+    //self.logInView.logInButton  change the button style
+    //self.logInView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.9];
+    //self.logInView.usernameField.backgroundColor = [UIColor colorWithWhite:.4 alpha:0.2];
+    //self.logInView.usernameField.textColor = [UIColor blackColor];
+    
+    [self setDelegate:self];
+    PFSignUpViewController *signupVC = [[PFSignUpViewController alloc]init];
+    signupVC.signUpView.logo = nil;
+    [signupVC setDelegate:self];
+    [self setSignUpController:signupVC];
+    
+    NSLog(@"This is the current user: %@", [PFUser currentUser]);
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
+
 
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     
-    if (![PFUser currentUser]) {
-        //create the login view controller
-        PFLogInViewController *loginVC = [[PFLogInViewController alloc]init];
-        [loginVC setDelegate:self];
-        
-        //create sign up view controller
-        PFSignUpViewController *signupVC = [[PFSignUpViewController alloc]init];
-        [signupVC setDelegate:self];
-        
-        //assign the signup to the login
-        [loginVC setSignUpController:signupVC];
-        
-        //uncomment if you want an animation
-        //[self presentViewController:loginVC animated:YES completion:NULL];
-    }
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - PFLoginViewControllerDelegateMethods
 
-//- (IBAction)logoutButton:(id)sender { }
+- (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    //[self dismissModalViewControllerAnimated:YES];
+}
+
+// Sent to the delegate when the log in screen is dismissed.
+- (void)logInViewControllerDidCancelLogIn:(PFLogInViewController *)logInController {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    //[self dismissModalViewControllerAnimated:YES];
+}
+
+/// Sent to the delegate when a PFUser is signed up.
+- (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    //[self dismissModalViewControllerAnimated:YES];
+}
+
+/// Sent to the delegate when the sign up screen is dismissed.
+- (void)signUpViewControllerDidCancelSignUp:(PFSignUpViewController *)signUpController {
+    [self dismissViewControllerAnimated:YES completion:nil];
+    //[self dismissModalViewControllerAnimated:YES];
+}
+
 
 @end

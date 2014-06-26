@@ -11,6 +11,7 @@
 
 @interface LoginViewController : PFLogInViewController <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
 
+- (instancetype)initWithStyle;
 
 @end
 

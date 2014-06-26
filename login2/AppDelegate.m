@@ -31,7 +31,9 @@
     [defaultACL setPublicReadAccess:YES];
     [PFACL setDefaultACL:defaultACL withAccessForCurrentUser:YES];
     
-    LoginViewController *loginVC = [[LoginViewController alloc]init];
+    
+    //this is just calling the login view controller, it will be someplace else in the app.
+    LoginViewController *loginVC = [[LoginViewController alloc]initWithStyle];
     self.window.rootViewController = loginVC;
     [self.window makeKeyAndVisible];
     
